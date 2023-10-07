@@ -1,7 +1,7 @@
 
 const Banner = () => {
  return (
-   <div className="carousel w-full h-[85vh] ">
+   <div className="carousel w-full  ">
      <div id="slide1" className="carousel-item bg-slate-50 relative w-full ">
        <div
          className="hero min-h-screen"

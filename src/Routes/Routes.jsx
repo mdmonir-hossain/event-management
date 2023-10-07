@@ -4,6 +4,9 @@ import MainLayout from "../Layout/MainLayout";
 import Home from "../Components/Home/Home";
 import EventServices from "../Components/EventServices/EventServices";
 import ErrorPage from "../Components/ErrorPage/ErrorPage";
+import EventCardDetails from "../Components/EventCardDetails/EventCardDeatails";
+import Login from "../Components/Login/Login";
+
 
 
 const Routes = createBrowserRouter([
@@ -18,8 +21,12 @@ const Routes = createBrowserRouter([
         loader: () => fetch("/eventData.json"),
       },
       {
-        path: "/services",
-        element: <EventServices></EventServices>,
+        path: "/services/:id",
+        element: <EventCardDetails></EventCardDetails>,
+      },
+      {
+        path: "/login",
+        element: <Login></Login>,
       },
     ],
   },

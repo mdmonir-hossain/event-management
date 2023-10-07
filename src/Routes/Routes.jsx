@@ -10,15 +10,16 @@ const Routes = createBrowserRouter([
   {
     path: "/",
     element: <MainLayout></MainLayout>,
-    errorElement:<ErrorPage></ErrorPage>,
+    errorElement: <ErrorPage></ErrorPage>,
     children: [
       {
         path: "/",
-        element:<Home></Home>,
+        element: <Home></Home>,
+        loader: () => fetch("/eventData.json"),
       },
       {
         path: "/services",
-        element:<EventServices></EventServices>,
+        element: <EventServices></EventServices>,
       },
     ],
   },

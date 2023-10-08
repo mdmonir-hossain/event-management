@@ -73,7 +73,15 @@ const Navbar = () => {
               Log Out
             </button>
           ) : (
-            <Link to="/login">Log in</Link>
+            <div>
+              <Link className="mr-5" to="/login">
+                Log in
+              </Link>{" "}
+              |
+              <Link className="ml-5"  to="/register">
+                Register
+              </Link>
+            </div>
           )}
         </div>
       </div>

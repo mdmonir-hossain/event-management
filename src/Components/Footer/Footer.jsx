@@ -1,4 +1,6 @@
 import React from 'react';
+import { scrollToTop } from 'react-scroll/modules/mixins/animate-scroll';
+import { Link } from 'react-scroll';
 
 const Footer = () => {
     return (
@@ -23,6 +25,7 @@ const Footer = () => {
             </p>
           </aside>
           <nav>
+            <Link onClick={scrollToTop}>To the top!</Link>
             <header className="footer-title">Social</header>
             <div className="grid grid-flow-col gap-4">
               <a>

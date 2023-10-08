@@ -1,4 +1,4 @@
-import { Link, NavLink } from "react-router-dom";
+import { Link,NavLink } from "react-router-dom";
 
 const Navbar = () => {
   return (
@@ -30,7 +30,10 @@ const Navbar = () => {
                 <NavLink to="/">Home</NavLink>
               </li>
               <li>
-                <NavLink to="/services">Services</NavLink>
+                <a
+                  href="#services">
+                  Services
+                </a>
               </li>
               <li>
                 <NavLink to="/about">About</NavLink>

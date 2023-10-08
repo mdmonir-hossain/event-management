@@ -4,8 +4,9 @@ import MainLayout from "../Layout/MainLayout";
 import Home from "../Components/Home/Home";
 import EventServices from "../Components/EventServices/EventServices";
 import ErrorPage from "../Components/ErrorPage/ErrorPage";
-import EventCardDetails from "../Components/EventCardDetails/EventCardDeatails";
 import Login from "../Components/Login/Login";
+import Register from "../Components/Register/Register";
+import EventCardDetails from "../Components/EventCardDeatails/EventCardDeatails";
 
 
 
@@ -20,6 +21,7 @@ const Routes = createBrowserRouter([
         element: <Home></Home>,
         loader: () => fetch("/eventData.json"),
       },
+      
       {
         path: "/services/:id",
         element: <EventCardDetails></EventCardDetails>,
@@ -27,6 +29,10 @@ const Routes = createBrowserRouter([
       {
         path: "/login",
         element: <Login></Login>,
+      },
+      {
+        path: "/register",
+        element: <Register></Register>,
       },
     ],
   },

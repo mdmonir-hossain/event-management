@@ -1,6 +1,12 @@
 import { Link } from "react-router-dom";
 
 const Login = () => {
+  const handleLogin = (e) => {
+    e.preventDefault();
+    const formValue = new FormData(e.currentTarget);
+    const email = formValue.get("email");
+    console.log(email);
+  }
   return (
     <div>
       <div className="hero min-h-screen bg-base-200">
@@ -14,7 +20,7 @@ const Login = () => {
             </p>
           </div>
           <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
-            <form className="card-body">
+            <form onSubmit={handleLogin} className="card-body">
               <div className="form-control">
                 <label className="label">
                   <span className="label-text">Email</span>
@@ -22,6 +28,7 @@ const Login = () => {
                 <input
                   type="email"
                   placeholder="email"
+                  name="email"
                   className="input input-bordered"
                   required
                 />
@@ -33,6 +40,7 @@ const Login = () => {
                 <input
                   type="password"
                   placeholder="password"
+                  name="password"
                   className="input input-bordered"
                   required
                 />
@@ -43,8 +51,11 @@ const Login = () => {
                 </label>
               </div>
               <div className="form-control mt-6">
-                <Link to="/login">Login</Link>
+                <button className="btn btn-primary">Login</button>
               </div>
+              <Link to="/register" className="text-blue-600">
+                Register
+              </Link>
             </form>
           </div>
         </div>

@@ -11,7 +11,7 @@ const EventServices = ({ event }) => {
     return (
       <div>
         <div
-          id="services"
+          
           className="card w-96 bg-base-100 shadow-xl"
           data-aos="fade-right"
         >

@@ -16,18 +16,26 @@ const Register = () => {
     const image = formValue.get("image");
     const email = formValue.get("email");
     const password = formValue.get("password");
-    register(email, password)
-      .then((result) => {
-        console.log(result.user);
-        setSuccess(result.user);
-        if (result.user) {
-           toast("User Create successfully");
-        }
-      })
-      .catch((error) => {
-        console.log(error);
-        setError(error.message);
-      });
+    
+     if (!/^(?=.*[A-Z])(?=.*[\W_]).{6,}$/.test(password)) {
+      toast(
+        "Minimum six characters, at least one capital letter and one special character"
+      );
+      return;
+    } 
+    setError('');
+      register(email, password)
+        .then((result) => {
+          console.log(result.user);
+          setSuccess(result.user);
+          if (result.user) {
+            toast("User Create successfully");
+          }
+        })
+        .catch((error) => {
+          console.log(error);
+          setError(error.message);
+        });
     if (error) {
       toast(error);
     };
@@ -36,7 +44,8 @@ const Register = () => {
   return (
     <div>
       <ToastContainer></ToastContainer>
-      <div className="w-full lg:w-1/2 mx-auto shadow-lg mt-6 ">
+      <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100 mx-auto mt-10">
+        <h1 className="text-center font-bold text-2xl">Please Register</h1>
         <form onSubmit={handleRegister} className="card-body">
           <div className="form-control">
             <label className="label">
@@ -88,11 +97,13 @@ const Register = () => {
           </div>
           <div className="form-control mt-6">
             <button className="btn btn-primary">Register</button>
+            <div className="flex">
+              <p>Already Have an Account?</p>
+              <Link to="/login" className="text-blue-600">
+                Log in
+              </Link>
+            </div>
           </div>
-          <p>Already Have an Account?</p>
-          <Link to="/login" className="text-blue-600">
-            Log in
-          </Link>
         </form>
       </div>
     </div>

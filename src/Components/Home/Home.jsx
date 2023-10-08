@@ -3,6 +3,7 @@ import { AuthContext } from '../../Firebase/Provider/AuthProvider';
 import { useLoaderData } from 'react-router-dom';
 import EventServices from '../EventServices/EventServices';
 import Banner from '../Header/Banner/Banner';
+import OurClients from '../OurClients/OurClients';
 
 const Home = () => {
     const eventData = useLoaderData();
@@ -19,6 +20,7 @@ const Home = () => {
             <EventServices key={event.id} event={event}></EventServices>
           ))}
         </div>
+        <OurClients></OurClients>
       </div>
     );
 };

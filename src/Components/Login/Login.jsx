@@ -1,5 +1,5 @@
 import { useContext, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Firebase/Provider/AuthProvider";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -7,7 +7,11 @@ import { Navigate } from "react-router-dom";
 
 const Login = () => {
   const [error,setError] = useState('');
-  const { logIn,user } = useContext(AuthContext);
+  const { logIn, user } = useContext(AuthContext);
+  const location = useLocation();
+  const navigate = useNavigate();
+  console.log(location);
+
   const handleLogin = (e) => {
     e.preventDefault();
     const formValue = new FormData(e.currentTarget);
@@ -15,7 +19,8 @@ const Login = () => {
     const password = formValue.get("password");
     logIn(email, password)
       .then(result => {
-      console.log(result.user);
+        console.log(result.user);
+        navigate(location?.state ? location.state : '/');
       })
       .catch(error => {
         setError(error.message);
@@ -55,11 +60,7 @@ const Login = () => {
               className="input input-bordered"
               required
             />
-            <label className="label">
-              <a href="#" className="label-text-alt link link-hover">
-                Forgot password?
-              </a>
-            </label>
+            
           </div>
           <div className="form-control mt-6">
             <button className="btn btn-primary">Login</button>

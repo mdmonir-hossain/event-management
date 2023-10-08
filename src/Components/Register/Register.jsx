@@ -1,15 +1,17 @@
 import { useContext, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
 import { AuthContext } from "../../Firebase/Provider/AuthProvider";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 const Register = () => {
+  const { user } = useContext(AuthContext);
   const [error, setError] = useState('');
   const [success, setSuccess] = useState("");
   const { register } = useContext(AuthContext);
 
   const handleRegister = (e) => {
+
     e.preventDefault();
     const formValue = new FormData(e.currentTarget);
     const name = formValue.get("name");
@@ -105,6 +107,7 @@ const Register = () => {
             </div>
           </div>
         </form>
+        {user && <Navigate to="/" replace={true} />}
       </div>
     </div>
   );

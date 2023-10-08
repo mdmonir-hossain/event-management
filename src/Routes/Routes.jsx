@@ -7,6 +7,7 @@ import ErrorPage from "../Components/ErrorPage/ErrorPage";
 import Login from "../Components/Login/Login";
 import Register from "../Components/Register/Register";
 import EventCardDetails from "../Components/EventCardDeatails/EventCardDeatails";
+import PrivateRoute from "./PrivateRoute";
 
 
 
@@ -21,10 +22,14 @@ const Routes = createBrowserRouter([
         element: <Home></Home>,
         loader: () => fetch("/eventData.json"),
       },
-      
+
       {
         path: "/services/:id",
-        element: <EventCardDetails></EventCardDetails>,
+        element: (
+          <PrivateRoute>
+            <EventCardDetails></EventCardDetails>
+          </PrivateRoute>
+        ),
       },
       {
         path: "/login",

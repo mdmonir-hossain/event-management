@@ -4,13 +4,26 @@ import { AuthContext } from "../../Firebase/Provider/AuthProvider";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { Navigate } from "react-router-dom";
+import { signInWithPopup } from "firebase/auth";
 
 const Login = () => {
   const [error,setError] = useState('');
-  const { logIn, user } = useContext(AuthContext);
+  const { logIn, user, googleSignin, googleProvider, auth } =
+    useContext(AuthContext);
   const location = useLocation();
   const navigate = useNavigate();
-  console.log(location);
+  console.log(googleSignin);
+
+  const handleGoogleSignin = () => {
+    signInWithPopup(auth,googleProvider)
+      .then((result) => {
+        const user = result.user;
+        console.log(user);
+      })
+      .catch((error) => {
+        console.log(error.message);
+      });
+}
 
   const handleLogin = (e) => {
     e.preventDefault();
@@ -60,7 +73,6 @@ const Login = () => {
               className="input input-bordered"
               required
             />
-            
           </div>
           <div className="form-control mt-6">
             <button className="btn btn-primary">Login</button>
@@ -72,6 +84,10 @@ const Login = () => {
             </div>
           </div>
         </form>
+        <hr />
+        <button onClick={handleGoogleSignin} className="btn">
+          Google login
+        </button>
         {user && <Navigate to="/" replace={true} />}
       </div>
     </div>

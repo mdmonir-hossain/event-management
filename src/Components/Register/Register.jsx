@@ -3,6 +3,7 @@ import { Link, Navigate } from "react-router-dom";
 import { AuthContext } from "../../Firebase/Provider/AuthProvider";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { updateProfile } from "firebase/auth";
 
 const Register = () => {
   const { user } = useContext(AuthContext);
@@ -33,6 +34,15 @@ const Register = () => {
           if (result.user) {
             toast("User Create successfully");
           }
+          updateProfile(result.user, {
+            displayName: name,
+            photoURL: image,
+          })
+            .then(() => console.log("Profile updated")
+            )
+            .catch(error => {
+            console.log(error);
+          })
         })
         .catch((error) => {
           console.log(error);
@@ -104,6 +114,8 @@ const Register = () => {
               <Link to="/login" className="text-blue-600">
                 Log in
               </Link>
+              <hr />
+              
             </div>
           </div>
         </form>

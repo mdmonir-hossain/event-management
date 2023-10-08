@@ -66,8 +66,8 @@ const Navbar = () => {
           </ul>
         </div>
         <div className="navbar-end">
-          {user?.name}
-          {user?.email}
+          {user?.displayName}
+
           {user ? (
             <button onClick={handleLogOut} className="btn">
               Log Out
@@ -78,10 +78,16 @@ const Navbar = () => {
                 Log in
               </Link>{" "}
               |
-              <Link className="ml-5"  to="/register">
+              <Link className="ml-5" to="/register">
                 Register
               </Link>
             </div>
+          )}
+          {user && (
+            <img
+              className="w-10 h-10 rounded-full mr-4 ml-4"
+              src={user?.photoURL}
+            />
           )}
         </div>
       </div>

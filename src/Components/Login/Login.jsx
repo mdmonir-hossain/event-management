@@ -1,11 +1,22 @@
+import { useContext } from "react";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../Firebase/Provider/AuthProvider";
 
 const Login = () => {
+
+  const { logIn } = useContext(AuthContext);
   const handleLogin = (e) => {
     e.preventDefault();
     const formValue = new FormData(e.currentTarget);
     const email = formValue.get("email");
-    console.log(email);
+    const password = formValue.get("password");
+    logIn(email, password)
+      .then(result => {
+      console.log(result.user);
+      })
+      .catch(error => {
+      console.log(error);
+    })
   }
   return (
     <div>
@@ -53,6 +64,7 @@ const Login = () => {
               <div className="form-control mt-6">
                 <button className="btn btn-primary">Login</button>
               </div>
+              <p>Don't have an account?</p>
               <Link to="/register" className="text-blue-600">
                 Register
               </Link>

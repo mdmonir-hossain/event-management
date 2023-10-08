@@ -1,6 +1,19 @@
-import { Link,NavLink } from "react-router-dom";
+import { useContext } from "react";
+import { Link, NavLink } from "react-router-dom";
+import { AuthContext } from "../../../Firebase/Provider/AuthProvider";
 
 const Navbar = () => {
+  const { user, logOut } = useContext(AuthContext);
+  const handleLogOut = () => {
+    logOut()
+      .then((result) => {
+        console.log(result.use);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+  console.log(user);
   return (
     <div>
       <div className="navbar shadow-lg bg-base-100 fixed top-0  z-30">
@@ -30,10 +43,7 @@ const Navbar = () => {
                 <NavLink to="/">Home</NavLink>
               </li>
               <li>
-                <a
-                  href="#services">
-                  Services
-                </a>
+                <a href="#services">Services</a>
               </li>
               <li>
                 <NavLink to="/about">About</NavLink>
@@ -56,7 +66,15 @@ const Navbar = () => {
           </ul>
         </div>
         <div className="navbar-end">
-          <Link to="/login">Log in</Link>
+          {user?.name}
+          {user?.email}
+          {user ? (
+            <button onClick={handleLogOut} className="btn">
+              Log Out
+            </button>
+          ) : (
+            <Link to="/login">Log in</Link>
+          )}
         </div>
       </div>
     </div>

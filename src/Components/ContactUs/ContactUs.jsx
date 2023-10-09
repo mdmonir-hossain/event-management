@@ -1,7 +1,7 @@
 const ContactUs = () => {
     return (
       <div>
-        <div className="hero min-h-screen bg-base-200">
+        <div className="hero min-h-screen bg-base-200 mt-[100px]">
           <div className="hero-content flex-col lg:flex-row-reverse">
             <div data-aos="fade-left" className="text-center lg:text-left">
               <h1 className="text-5xl font-bold text-orange-400">

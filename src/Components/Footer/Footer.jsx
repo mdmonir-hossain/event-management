@@ -3,7 +3,7 @@ import React from 'react';
 
 const Footer = () => {
     return (
-      <div>
+      <div data-aos="fade-up">
         <div className="w-full h-2 bg-orange-400"></div>
         <footer className="footer items-center p-4 bg-neutral text-neutral-content">
           <aside className="items-center grid-flow-col">

@@ -12,8 +12,10 @@ const Home = () => {
     return (
       <div>
         <Banner></Banner>
-        <h1 className="text-center font-bold text-3xl text-orange-400 mb-4 mt-8" >Our Services</h1>
-        
+        <h1 className="text-center font-bold text-3xl text-orange-400 mb-4 mt-[100px]">
+          Our Services
+        </h1>
+
         <div
           id="services"
           className="grid grid-cols-1 md:grid-cols-2  lg:grid-cols-3 gap-4 container mx-auto"

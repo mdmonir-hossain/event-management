@@ -8,6 +8,8 @@ import Login from "../Components/Login/Login";
 import Register from "../Components/Register/Register";
 import EventCardDetails from "../Components/EventCardDeatails/EventCardDeatails";
 import PrivateRoute from "./PrivateRoute";
+import AboutUS from "../Components/AboutUS/AboutUS";
+import EventServiceRoute from "../Components/EventServiceRoute/EventServiceRoute";
 
 
 
@@ -40,9 +42,13 @@ const Routes = createBrowserRouter([
         path: "/services",
         element: (
           <PrivateRoute>
-            <Register></Register>
+            <EventServiceRoute></EventServiceRoute>
           </PrivateRoute>
         ),
+      },
+      {
+        path: "/about",
+        element: <AboutUS></AboutUS>,
       },
     ],
   },

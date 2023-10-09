@@ -40,8 +40,7 @@ const ContactUs = () => {
                     celebration, or any special occasion, we're committed to
                     making it an extraordinary experience.
                   </li>
-                  <li></li>
-                  <li></li>
+                  
                 </ul>
                 Let us handle the planning, so you can focus on savoring every
                 moment. Contact us today to begin the journey towards your dream

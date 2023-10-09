@@ -15,10 +15,10 @@ console.log(greetign);
 <details><summary><b>Answer</b></summary>
 <p>
 
-#### Answer: ?
+#### Answer: - A: `{}`
 
 <i>Write your explanation here</i>
-
+- output will be `{}`.Because it is global variable.
 </p>
 </details>
 
@@ -40,10 +40,10 @@ sum(1, "2");
 <details><summary><b>Answer</b></summary>
 <p>
 
-#### Answer: ?
+#### Answer: - C: `"12"`
 
 <i>Write your explanation here</i>
-
+- Output will be `"12"`. a is numeric but b is string . as a result concatenates the two values .
 </p>
 </details>
 
@@ -66,10 +66,10 @@ console.log(food);
 <details><summary><b>Answer</b></summary>
 <p>
 
-#### Answer: ?
+#### Answer: - A: `['🍕', '🍫', '🥑', '🍔']`
 
 <i>Write your explanation here</i>
-
+- output will be A: `['🍕', '🍫', '🥑', '🍔']`. Because we have consoled food array.
 </p>
 </details>
 
@@ -91,10 +91,10 @@ console.log(sayHi());
 <details><summary><b>Answer</b></summary>
 <p>
 
-#### Answer: ?
+#### Answer: - B: `Hi there, undefined`
 
 <i>Write your explanation here</i>
-
+- output will be "B: `Hi there, undefined`". Because this function did not pass arguments 
 </p>
 </details>
 
@@ -119,9 +119,9 @@ console.log(count);
 <details><summary><b>Answer</b></summary>
 <p>
 
-#### Answer: ?
+#### Answer: - C: 3
 
 <i>Write your explanation here</i>
-
+Output will be "C: 3". there is "if(num)" condition ,we know that condition always check true.in this condition  0 is falsy value that's why output will be 3.
 </p>
 </details>

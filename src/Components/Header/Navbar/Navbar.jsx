@@ -134,23 +134,25 @@ const Navbar = () => {
           </ul>
         </div>
         <div className="navbar-end">
-          {user?.displayName}
+          <div className="lg:flex lg:justify-center lg:items-center flex-row  ">
+            {user?.displayName}
 
-          {user ? (
-            <button onClick={handleLogOut} className="btn">
-              Log Out
-            </button>
-          ) : (
-            <div>
-              <Link className="mr-5" to="/login">
-                Log in
-              </Link>{" "}
-              |
-              <Link className="ml-5" to="/register">
-                Register
-              </Link>
-            </div>
-          )}
+            {user ? (
+              <button onClick={handleLogOut} className="btn ml-4">
+                Log Out
+              </button>
+            ) : (
+              <div>
+                <Link className="mr-5" to="/login">
+                  Log in
+                </Link>{" "}
+                |
+                <Link className="ml-5" to="/register">
+                  Register
+                </Link>
+              </div>
+            )}
+          </div>
           {user && (
             <img
               className="w-10 h-10 rounded-full mr-4 ml-4"

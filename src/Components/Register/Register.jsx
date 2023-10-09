@@ -57,7 +57,10 @@ const Register = () => {
     <div>
       <ToastContainer></ToastContainer>
       <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100 mx-auto mt-10">
-        <h1 className="text-center font-bold text-2xl">Please Register</h1>
+        <h1 className="text-center font-bold text-2xl text-orange-400 ">
+          Please Register
+        </h1>
+        <hr/>
         <form onSubmit={handleRegister} className="card-body">
           <div className="form-control">
             <label className="label">
@@ -108,14 +111,13 @@ const Register = () => {
             />
           </div>
           <div className="form-control mt-6">
-            <button className="btn btn-primary">Register</button>
+            <button className="btn bg-orange-400 text-white">Register</button>
             <div className="flex">
               <p>Already Have an Account?</p>
               <Link to="/login" className="text-blue-600">
                 Log in
               </Link>
               <hr />
-              
             </div>
           </div>
         </form>

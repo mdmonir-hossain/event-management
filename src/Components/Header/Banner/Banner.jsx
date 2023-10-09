@@ -14,18 +14,19 @@ const Banner = () => {
          <div className="hero-content text-center text-neutral-content">
            <div className="max-w-md">
              <h1 className="mb-5 text-5xl font-bold">
-               Birthday Event Management
+               Consistently Delivering Exceptional Events 
+               
              </h1>
+
              <p className="mb-5">
                We create it, you celebrate it* We make your dreams come true
                -Book your special day
              </p>
-    
            </div>
          </div>
        </div>
        <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-         <a href="#slide4" className="btn btn-circle">
+         <a href="#slide4" className="btn btn-circle ">
            ❮
          </a>
          <a href="#slide2" className="btn btn-circle">

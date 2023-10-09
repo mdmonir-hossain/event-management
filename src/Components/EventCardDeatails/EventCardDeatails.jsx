@@ -1,15 +1,24 @@
-import { useParams } from "react-router-dom";
+import { useLoaderData, useParams } from "react-router-dom";
+import ShowDetailsCard from "./ShowDetailsCard";
+import { useEffect, useState } from "react";
 
 
 const EventCardDetails = () => {
     const { id } = useParams();
-    console.log(id);
-    return (
+    const eventDetails = useLoaderData();
+    const [eventcards, setEventcards] = useState([]);
+
+    useEffect(() => {
+        const cardDetails = eventDetails.find((card) => card.id === id);
+        setEventcards(cardDetails);
         
-    
-        <div>
-            
-        </div>
+    }, [eventDetails, id]);
+
+    console.log(eventcards);
+    return (
+      <div className="flex justify-center m-4 w-full">
+        <ShowDetailsCard eventcards={eventcards}></ShowDetailsCard>
+      </div>
     );
 };
 

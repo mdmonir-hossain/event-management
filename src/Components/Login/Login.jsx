@@ -47,7 +47,9 @@ const Login = () => {
     <div>
       <ToastContainer></ToastContainer>
       <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100 mx-auto mt-10 mb-10">
-        <h1 className="text-center font-bold text-2xl">Please Login</h1>
+        <h1 className="text-center font-bold text-2xl text-orange-400 text-white">
+          Please Login
+        </h1>
         <hr />
         <form onSubmit={handleLogin} className="card-body">
           <div className="form-control">
@@ -75,7 +77,7 @@ const Login = () => {
             />
           </div>
           <div className="form-control mt-6">
-            <button className="btn btn-primary">Login</button>
+            <button className="btn bg-orange-400 text-white hover:text-black">Login</button>
             <div className="flex">
               <p>Don't have an account?</p>
               <Link to="/register" className="text-blue-600">
@@ -85,7 +87,10 @@ const Login = () => {
           </div>
         </form>
         <hr />
-        <button onClick={handleGoogleSignin} className="btn">
+        <button
+          onClick={handleGoogleSignin}
+          className="btn text-orange-400 text-white"
+        >
           Google login
         </button>
         {user && <Navigate to="/" replace={true} />}

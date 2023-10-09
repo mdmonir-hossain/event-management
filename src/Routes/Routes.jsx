@@ -25,11 +25,8 @@ const Routes = createBrowserRouter([
 
       {
         path: "/services/:id",
-        element: (
-          <PrivateRoute>
-            <EventCardDetails></EventCardDetails>
-          </PrivateRoute>
-        ),
+        element: <EventCardDetails></EventCardDetails>,
+        loader: () => fetch("/eventData.json"),
       },
       {
         path: "/login",
@@ -38,6 +35,14 @@ const Routes = createBrowserRouter([
       {
         path: "/register",
         element: <Register></Register>,
+      },
+      {
+        path: "/services",
+        element: (
+          <PrivateRoute>
+            <Register></Register>
+          </PrivateRoute>
+        ),
       },
     ],
   },

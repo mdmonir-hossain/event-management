@@ -16,7 +16,7 @@ const Navbar = () => {
   console.log(user);
   return (
     <div>
-      <div className="navbar shadow-lg bg-base-100 ">
+      <div className="navbar bg-orange-400 text-white shadow-lg bg-base-100 ">
         <div className="navbar-start">
           <div className="dropdown">
             <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -40,28 +40,96 @@ const Navbar = () => {
               className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
             >
               <li>
-                <NavLink to="/">Home</NavLink>
+                <NavLink
+                  to="/"
+                  className={({ isActive, isPending }) =>
+                    isPending
+                      ? "pending"
+                      : isActive
+                      ? "border-b-2 border-white"
+                      : ""
+                  }
+                >
+                  Home
+                </NavLink>
               </li>
               <li>
-                <a href="#services">Services</a>
+                <a
+                  href="#services"
+                  className={({ isActive, isPending }) =>
+                    isPending
+                      ? "pending"
+                      : isActive
+                      ? "border-b-2 border-white"
+                      : ""
+                  }
+                >
+                  Services
+                </a>
               </li>
               <li>
-                <NavLink to="/about">About</NavLink>
+                <NavLink
+                  to="/about"
+                  className={({ isActive, isPending }) =>
+                    isPending
+                      ? "pending"
+                      : isActive
+                      ? "border-b-2 border-white"
+                      : ""
+                  }
+                >
+                  About
+                </NavLink>
               </li>
             </ul>
           </div>
-          <a className="btn btn-ghost normal-case text-xl">daisyUI</a>
+          <a className="btn btn-ghost normal-case text-xl">
+            <img className="w-20" src="https://i.ibb.co/ynfRKdd/mh-event.png" />
+          </a>
         </div>
         <div className="navbar-center hidden lg:flex">
-          <ul className="menu menu-horizontal px-1">
+          <ul className=" menu-horizontal gap-4 px-1">
             <li>
-              <NavLink to="/">Home</NavLink>
+              <NavLink
+                to="/"
+                className={({ isActive, isPending }) =>
+                  isPending
+                    ? "pending"
+                    : isActive
+                    ? "border-b-2 border-white"
+                    : ""
+                }
+              >
+                Home
+              </NavLink>
             </li>
             <li>
-              <NavLink to="/services">Services</NavLink>
+              <NavLink
+                to="/services"
+                className={({ isActive, isPending }) =>
+                  isPending
+                    ? "pending"
+                    : isActive
+                    ? "border-b-2 border-white"
+                    : ""
+                }
+              >
+                Services
+              </NavLink>
             </li>
             <li>
-              <NavLink to="/about">About</NavLink>
+              <NavLink
+                to="/about"
+                className={({ isActive, isPending }) =>
+                  isPending
+                    ? "pending"
+                    : isActive
+                    ? "border-b-2 border-white"
+                    : ""
+                }
+              >
+                About
+              </NavLink>
             </li>
           </ul>
         </div>

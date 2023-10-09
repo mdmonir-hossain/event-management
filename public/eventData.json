@@ -1,44 +1,44 @@
 [
     {
         "id": "1",
-        "name": "Product A",
-        "image": "https://i.ibb.co/4FKrpkW/Birthday-planner.jpg",
-        "price": 19.99,
+        "name": "Wedding Planner",
+        "image": "https://i.ibb.co/CQgw1K1/wedding.jpg",
+        "price": 1500,
         "short_description": "A high-quality product for everyday use."
     },
     {
         "id": "2",
-        "name": "Product B",
-        "image": "product_b.jpg",
-        "price": 29.99,
+        "name": " Birthday Party",
+        "image": "https://i.ibb.co/SBHLqnL/birthday.jpg",
+        "price": 1000,
         "short_description": "Compact and efficient, perfect for small spaces."
     },
     {
         "id": "3",
-        "name": "Product C",
-        "image": "product_c.jpg",
-        "price": 39.99,
+        "name": "Anniversary Party",
+        "image": "https://i.ibb.co/mGNpwV4/anniversaries.jpg",
+        "price": 1000,
         "short_description": "Durable and stylish, a great addition to any home."
     },
     {
         "id": "4",
-        "name": "Product D",
-        "image": "product_d.jpg",
-        "price": 49.99,
+        "name": "Engagement Party",
+        "image": "https://i.ibb.co/kXZWjMK/engaged.jpg",
+        "price": 1200,
         "short_description": "Advanced technology for the tech-savvy consumer."
     },
     {
         "id": "5",
-        "name": "Product E",
-        "image": "product_e.jpg",
-        "price": 59.99,
+        "name": "Retirement Party",
+        "image": "https://i.ibb.co/bNGDJJX/retirement.jpg",
+        "price": 900,
         "short_description": "Elegant design with premium materials."
     },
     {
         "id": "6",
-        "name": "Product F",
-        "image": "product_f.jpg",
-        "price": 69.99,
+        "name": "Baby shower",
+        "image": "https://i.ibb.co/92TSpc7/baby-shower.jpg",
+        "price": 1000,
         "short_description": "Enhance your lifestyle with this top-of-the-line product."
     }
 ]

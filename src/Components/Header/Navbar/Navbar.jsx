@@ -37,7 +37,7 @@ const Navbar = () => {
             </label>
             <ul
               tabIndex={0}
-              className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
+              className="menu menu-sm bg-orange-400 text-white shadow-lg dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
             >
               <li>
                 <NavLink
@@ -87,7 +87,7 @@ const Navbar = () => {
             <img className="w-20" src="https://i.ibb.co/ynfRKdd/mh-event.png" />
           </a>
         </div>
-        <div className="navbar-center hidden lg:flex">
+        <div className="navbar-center hidden lg:flex ">
           <ul className=" menu-horizontal gap-4 px-1">
             <li>
               <NavLink
@@ -105,7 +105,7 @@ const Navbar = () => {
             </li>
             <li>
               <NavLink
-                to="/services"
+                to="/gallery"
                 className={({ isActive, isPending }) =>
                   isPending
                     ? "pending"
@@ -114,7 +114,7 @@ const Navbar = () => {
                     : ""
                 }
               >
-                Services
+                Gallery
               </NavLink>
             </li>
             <li>

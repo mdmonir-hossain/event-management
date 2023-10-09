@@ -6,9 +6,11 @@ import "react-toastify/dist/ReactToastify.css";
 import { Navigate } from "react-router-dom";
 import { signInWithPopup } from "firebase/auth";
 
+import { FaGoogle, FaGithub } from "react-icons/fa";
+
 const Login = () => {
   const [error,setError] = useState('');
-  const { logIn, user, googleSignin, googleProvider, auth } =
+  const { logIn, user, googleSignin, googleProvider,githubProvider, auth } =
     useContext(AuthContext);
   const location = useLocation();
   const navigate = useNavigate();
@@ -16,6 +18,16 @@ const Login = () => {
 
   const handleGoogleSignin = () => {
     signInWithPopup(auth,googleProvider)
+      .then((result) => {
+        const user = result.user;
+        console.log(user);
+      })
+      .catch((error) => {
+        console.log(error.message);
+      });
+}
+  const handleGithubSignin = () => {
+    signInWithPopup(auth,githubProvider)
       .then((result) => {
         const user = result.user;
         console.log(user);
@@ -47,7 +59,7 @@ const Login = () => {
     <div>
       <ToastContainer></ToastContainer>
       <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100 mx-auto mt-10 mb-10">
-        <h1 className="text-center font-bold text-2xl text-orange-400 text-white">
+        <h1 className="text-center font-bold text-2xl text-orange-400 ">
           Please Login
         </h1>
         <hr />
@@ -77,7 +89,9 @@ const Login = () => {
             />
           </div>
           <div className="form-control mt-6">
-            <button className="btn bg-orange-400 text-white hover:text-black">Login</button>
+            <button className="btn bg-orange-400 text-white hover:text-black">
+              Login
+            </button>
             <div className="flex">
               <p>Don't have an account?</p>
               <Link to="/register" className="text-blue-600">
@@ -87,12 +101,22 @@ const Login = () => {
           </div>
         </form>
         <hr />
-        <button
-          onClick={handleGoogleSignin}
-          className="btn text-orange-400 text-white"
-        >
-          Google login
-        </button>
+        <div className="flex">
+          <button
+            onClick={handleGoogleSignin}
+            className="btn w-1/2  bg-orange-400 text-white"
+          >
+            <FaGoogle></FaGoogle>
+            Google login
+          </button>
+          <button
+            onClick={handleGithubSignin}
+            className="btn w-1/2 bg-orange-400 text-white"
+          >
+            <FaGithub></FaGithub>
+            Github login
+          </button>
+        </div>
         {user && <Navigate to="/" replace={true} />}
       </div>
     </div>

@@ -10,6 +10,7 @@ import EventCardDetails from "../Components/EventCardDeatails/EventCardDeatails"
 import PrivateRoute from "./PrivateRoute";
 import AboutUS from "../Components/AboutUS/AboutUS";
 import EventServiceRoute from "../Components/EventServiceRoute/EventServiceRoute";
+import Gallery from "../Components/Gallery/Gallery";
 
 
 
@@ -27,7 +28,11 @@ const Routes = createBrowserRouter([
 
       {
         path: "/services/:id",
-        element: <EventCardDetails></EventCardDetails>,
+        element: (
+          <PrivateRoute>
+            <EventCardDetails></EventCardDetails>
+          </PrivateRoute>
+        ),
         loader: () => fetch("/eventData.json"),
       },
       {
@@ -48,7 +53,19 @@ const Routes = createBrowserRouter([
       },
       {
         path: "/about",
-        element: <AboutUS></AboutUS>,
+        element: (
+          <PrivateRoute>
+            <AboutUS></AboutUS>
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: "/gallery",
+        element: (
+          <PrivateRoute>
+            <Gallery></Gallery>
+          </PrivateRoute>
+        ),
       },
     ],
   },

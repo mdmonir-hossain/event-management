@@ -18,11 +18,11 @@ const ShowDetailsCard = ({ eventcards }) => {
           <p className="card-title">Price: $ {price}</p>
           <p className="w-[300px] justify-center">{short_description}</p>
           <div className="card-actions">
-            <Link to={`/services/${id}`}>
+            
               <button className="btn text-white hover:text-black bg-orange-400">
-                Show Detials
+                Book Package
               </button>
-            </Link>
+            
           </div>
         </div>
       </div>

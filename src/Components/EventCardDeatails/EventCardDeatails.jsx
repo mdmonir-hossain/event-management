@@ -16,7 +16,7 @@ const EventCardDetails = () => {
 
     console.log(eventcards);
     return (
-      <div className="flex justify-center m-4 w-full">
+      <div className="flex justify-center mt-4 mb-4 w-full">
         <ShowDetailsCard eventcards={eventcards}></ShowDetailsCard>
       </div>
     );

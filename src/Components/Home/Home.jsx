@@ -4,6 +4,7 @@ import { useLoaderData } from 'react-router-dom';
 import EventServices from '../EventServices/EventServices';
 import Banner from '../Header/Banner/Banner';
 import OurClients from '../OurClients/OurClients';
+import ContactUs from '../ContactUs/ContactUs';
 
 const Home = () => {
     const eventData = useLoaderData();
@@ -22,6 +23,7 @@ const Home = () => {
           ))}
         </div>
         <OurClients></OurClients>
+        <ContactUs></ContactUs>
       </div>
     );
 };

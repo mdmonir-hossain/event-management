@@ -4,41 +4,41 @@
         "name": "Wedding Planner",
         "image": "https://i.ibb.co/CQgw1K1/wedding.jpg",
         "price": 1500,
-        "short_description": "A high-quality product for everyday use."
+        "short_description": "Let's make your wedding dreams come true! Contact us now to schedule your free consultation and begin the journey towards your perfect wedding."
     },
     {
         "id": "2",
         "name": " Birthday Party",
         "image": "https://i.ibb.co/SBHLqnL/birthday.jpg",
         "price": 1000,
-        "short_description": "Compact and efficient, perfect for small spaces."
+        "short_description": "Ready to make your birthday unforgettable? Reach out to us now for a complimentary consultation and let's start planning your special day!"
     },
     {
         "id": "3",
         "name": "Anniversary Party",
         "image": "https://i.ibb.co/mGNpwV4/anniversaries.jpg",
         "price": 1000,
-        "short_description": "Durable and stylish, a great addition to any home."
+        "short_description": "Ready to celebrate your love story? Contact us now to schedule a complimentary consultation and let's start crafting a heartfelt anniversary celebration."
     },
     {
         "id": "4",
         "name": "Engagement Party",
         "image": "https://i.ibb.co/kXZWjMK/engaged.jpg",
         "price": 1200,
-        "short_description": "Advanced technology for the tech-savvy consumer."
+        "short_description": "Ready to celebrate your love story? Contact us now to schedule a complimentary consultation and let's begin crafting a memorable engagement party that sets the perfect tone for your future together."
     },
     {
         "id": "5",
         "name": "Retirement Party",
         "image": "https://i.ibb.co/bNGDJJX/retirement.jpg",
         "price": 900,
-        "short_description": "Elegant design with premium materials."
+        "short_description": "Ready to embrace retirement with style? Contact us now to schedule a complimentary consultation and let's begin crafting a memorable retirement party that marks the beginning of a new chapter in your life."
     },
     {
         "id": "6",
         "name": "Baby shower",
         "image": "https://i.ibb.co/92TSpc7/baby-shower.jpg",
         "price": 1000,
-        "short_description": "Enhance your lifestyle with this top-of-the-line product."
+        "short_description": "Ready to celebrate the joy of new life? Contact us now to schedule a complimentary consultation and let's begin crafting a memorable baby shower that captures the essence of your growing family."
     }
 ]
